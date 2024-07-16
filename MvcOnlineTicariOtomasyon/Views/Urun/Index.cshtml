@@ -1,7 +1,7 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
 @model List<Urun>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Ürünler";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />  
@@ -16,21 +16,25 @@
         <th>Kategori</th>
         <th>Görsel</th>
         <th>Sil</th>
+        <th>Güncelle</th>
     </tr>
     @foreach(var urun in Model)
             {
                 <tr>
-                     <td>@urun.UrunID</td>
-                     <td>@urun.UrunAd</td>
-                     <td>@urun.Marka</td>
-                     <td>@urun.Stok</td>
-                     <td>@urun.AlisFiyat</td>
-                     <td>@urun.SatisFiyat</td>
-                     <td>@urun.Kategori.KategoriAd</td>
-                     <td>@urun.UrunGorsel</td>
-                     <td>
-                         <a href="/Urun/urunSil/@urun.Durum" class="btn btn-danger">Sil</a>
-                     </td>
+                    <td>@urun.UrunID</td>
+                    <td>@urun.UrunAd</td>
+                    <td>@urun.Marka</td>
+                    <td>@urun.Stok</td>
+                    <td>@urun.AlisFiyat</td>
+                    <td>@urun.SatisFiyat</td>
+                    <td>@urun.Kategori.KategoriAd</td>
+                    <td>@urun.UrunGorsel</td>
+                    <td>
+                        <a href="/Urun/urunSil/@urun.UrunID" class="btn btn-danger">Sil</a>
+                    </td>
+                    <td>
+                        <a href="/Urun/urunGetir/@urun.UrunID" class="btn btn-primary">Güncelle</a>
+                    </td>
                 </tr>
             }
 </table>

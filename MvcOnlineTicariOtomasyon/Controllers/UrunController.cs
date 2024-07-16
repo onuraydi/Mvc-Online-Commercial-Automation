@@ -19,6 +19,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult yeniUrun()
         {
+            List<SelectListItem> deger = (from x in context.Kategoris.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.KategoriAd,
+                                              Value = x.KategoriID.ToString()
+                                          }).ToList();
+            ViewBag.deger = deger;
+
             return View();
         }
         [HttpPost]
@@ -31,18 +39,40 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
         public ActionResult urunSil(int? urunId)
         {
-            if (urunId.HasValue)
+            var silinecekId = context.Uruns.Find(urunId);
+            if(silinecekId.Durum == true)
             {
-                var silinecekId = context.Uruns.Find(urunId.Value);
-                if (silinecekId != null)
-                {
-                    silinecekId.Durum = false;
-                    context.SaveChanges();
-                }
+                silinecekId.Durum = false;
+                context.SaveChanges();
+                return RedirectToAction("Index");
             }
             return RedirectToAction("Index");
         }
 
-
+        public ActionResult urunGetir(int ID)
+        {
+            List<SelectListItem> deger = (from x in context.Kategoris.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.KategoriAd,
+                                              Value = x.KategoriID.ToString()
+                                          }).ToList();
+            ViewBag.deger = deger;
+            var guncellenecekUrun = context.Uruns.Find(ID);
+            return View("urunGetir", guncellenecekUrun);
+        }
+        public ActionResult urunGuncelle(Urun urun)
+        {
+            var guncellenecekUrun = context.Uruns.Find(urun.UrunID);
+            guncellenecekUrun.UrunAd = urun.UrunAd;
+            guncellenecekUrun.Marka = urun.Marka;
+            guncellenecekUrun.Stok = urun.Stok;
+            guncellenecekUrun.AlisFiyat = urun.AlisFiyat;
+            guncellenecekUrun.SatisFiyat = urun.SatisFiyat;
+            guncellenecekUrun.KategoriID = urun.KategoriID;
+            guncellenecekUrun.UrunGorsel = urun.UrunGorsel;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

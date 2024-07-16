@@ -1,0 +1,27 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cari
+@{
+    ViewBag.Title = "Cari Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2 style="margin-left:20px">Cari Güncelle</h2>
+<br />
+
+@using(Html.BeginForm("cariGuncelle","Cari",FormMethod.Post))
+            {
+                <div class="form-group" style="margin-left:20px">
+                    @Html.Label("Ad:")
+                    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Soyad:")
+                    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Şehir:")
+                    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Mail:")
+                    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+                    @Html.HiddenFor(x => x.CariID)
+                </div>
+                <button class="btn btn-success" style="margin-left:20px">Güncelle</button>
+            }

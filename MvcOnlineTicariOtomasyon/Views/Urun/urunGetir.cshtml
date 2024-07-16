@@ -1,0 +1,40 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "Ürün Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br/>
+<h2 style="margin-left:20px">Ürün Güncelleme</h2>
+<br/>
+
+@using(Html.BeginForm("urunGuncelle","Urun",FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.UrunID)
+    @Html.Label("Ürün Adı:", new {@style ="margin-left:20px"})
+    @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" ,@style = "margin-left:20px"})
+    <br />
+    @Html.Label("Marka:", new { @style = "margin-left:20px" })
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" ,@style = "margin-left:20px" })
+    <br />
+    @Html.Label("Stok:", new { @style = "margin-left:20px" })
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control", @style = "margin-left:20px" })
+    <br />
+    @Html.Label("Alış Fiyatı:", new { @style = "margin-left:20px" })
+    @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control", @style = "margin-left:20px" })
+    <br />
+    @Html.Label("Satış Fiyat:", new { @style = "margin-left:20px" })
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control", @style = "margin-left:20px" })
+    <br />
+    @Html.Label("Kategori:", new { @style = "margin-left:20px" })
+    @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.deger, new { @class = "form-control", @style = "margin-left:20px" })
+    <br />
+    @Html.Label("Görsel URL:", new { @style = "margin-left:20px" })
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control", @style = "margin-left:20px" })
+    <br />
+    @Html.Label("Durum:", new { @style = "margin-left:20px" })
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control", @style = "margin-left:20px" })
+    <br />
+    <button class="btn btn-primary"style="margin-left:20px">Güncelle</button>
+    <br />
+}
+

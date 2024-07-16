@@ -14,6 +14,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Column(TypeName = "varchar")]
         [StringLength(25)]
         public string DepartmanAd { get; set; }
+        public bool DepartmanDurum { get; set; }
         public ICollection<Personel> Personels { get; set; }
     }
 }

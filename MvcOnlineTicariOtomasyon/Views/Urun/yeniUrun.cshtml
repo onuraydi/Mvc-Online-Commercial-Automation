@@ -1,6 +1,6 @@
 ﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
 @{
-    ViewBag.Title = "yeniUrun";
+    ViewBag.Title = "Yeni Urun";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
@@ -24,7 +24,8 @@
     @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
     <br />
     @Html.Label("Kategori:")
-    @Html.TextBoxFor(x => x.KategoriID, new { @class = "form-control" })
+    @Html.DropDownListFor(x=> x.KategoriID,(List<SelectListItem>)ViewBag.deger,new {@class="form-control"})
+    @*@Html.TextBoxFor(x => x.KategoriID, new { @class = "form-control" })*@
     <br />
     @Html.Label("Görsel URL:")
     @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })

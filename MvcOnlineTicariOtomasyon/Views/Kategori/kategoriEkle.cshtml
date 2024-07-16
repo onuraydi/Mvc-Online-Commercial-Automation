@@ -1,7 +1,7 @@
 ﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Kategori
 
 @{
-    ViewBag.Title = "kategoriEkle";
+    ViewBag.Title = "Kategori Ekle";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br/>
@@ -12,5 +12,5 @@
     @Html.Label("Kategori Adı:")
     @Html.TextBoxFor(x => x.KategoriAd,new {@class ="form-control"})
     <br />
-    <button class="btn btn-info">Kaydet</button>
+    <button class="btn btn-success">Ekle</button>
 </form>
