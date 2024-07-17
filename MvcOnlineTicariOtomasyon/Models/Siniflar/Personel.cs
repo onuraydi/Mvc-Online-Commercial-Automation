@@ -22,6 +22,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         public string PersonelGorsel { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }
         public int DepartmanId { get; set; }
+        public bool PersonelDurum { get; set; }
         public virtual Departman Departman { get; set; }
     }
 }

@@ -1,0 +1,40 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "Satışlar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered"style="margin-left:20px;margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Ürün</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Tutar</th>
+        <th>Cari</th>
+        <th>Personel</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach(var satis in Model)
+            {
+                <tr>
+                    <td>@satis.SatisHareketID</td>
+                    <td>@satis.Urun.UrunAd</td>
+                    <td>@satis.Fiyat</td>
+                    <td>@satis.Adet</td>
+                    <td>@satis.ToplamTutar</td>
+                    <td>@satis.Cari.CariAd @satis.Cari.CariSoyad</td>
+                    <td>@satis.Personel.PersonelAd @satis.Personel.PersonelSoyad</td>
+                    <td>@satis.Tarih</td>
+                    <td><a href="#" class="btn btn-danger">Sil</a></td>
+                    <td><a href="#" class="btn btn-primary">Güncelle</a></td>
+                    <td><a href="#" class="btn btn-info">Detaylar</a></td>
+                </tr>
+            }
+</table>
+<a href="/Satis/yeniSatis" class="btn btn-success" style="margin-left:20px">Yeni Satış</a>
+
