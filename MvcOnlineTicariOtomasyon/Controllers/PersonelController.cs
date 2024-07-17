@@ -1,4 +1,4 @@
-﻿using MvcOnlineTicariOtomasyon.Models.Siniflar;
+﻿    using MvcOnlineTicariOtomasyon.Models.Siniflar;
 using System;
 using System.Collections.Generic;
 using System.Linq;

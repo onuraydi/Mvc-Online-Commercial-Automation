@@ -4,37 +4,56 @@
     ViewBag.Title = "Satışlar";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<table class="table table-bordered"style="margin-left:20px;margin-top:20px;">
-    <tr>
-        <th>ID</th>
-        <th>Ürün</th>
-        <th>Fiyat</th>
-        <th>Adet</th>
-        <th>Tutar</th>
-        <th>Cari</th>
-        <th>Personel</th>
-        <th>Tarih</th>
-        <th>Sil</th>
-        <th>Güncelle</th>
-        <th>Detaylar</th>
-    </tr>
-    @foreach(var satis in Model)
-            {
-                <tr>
-                    <td>@satis.SatisHareketID</td>
-                    <td>@satis.Urun.UrunAd</td>
-                    <td>@satis.Fiyat</td>
-                    <td>@satis.Adet</td>
-                    <td>@satis.ToplamTutar</td>
-                    <td>@satis.Cari.CariAd @satis.Cari.CariSoyad</td>
-                    <td>@satis.Personel.PersonelAd @satis.Personel.PersonelSoyad</td>
-                    <td>@satis.Tarih</td>
-                    <td><a href="#" class="btn btn-danger">Sil</a></td>
-                    <td><a href="#" class="btn btn-primary">Güncelle</a></td>
-                    <td><a href="#" class="btn btn-info">Detaylar</a></td>
-                </tr>
-            }
+<br />
+<table id ="satisTablosu" class="table table-bordered" style="margin-left:20px;margin-top:20px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ürün</th>
+            <th>Fiyat</th>
+            <th>Adet</th>
+            <th>Tutar</th>
+            <th>Cari</th>
+            <th>Personel</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    @foreach (var satis in Model)
+    {
+        <tr>
+            <td>@satis.SatisHareketID</td>
+            <td>@satis.Urun.UrunAd</td>
+            <td>@satis.Fiyat</td>
+            <td>@satis.Adet</td>
+            <td>@satis.ToplamTutar</td>
+            <td>@satis.Cari.CariAd @satis.Cari.CariSoyad</td>
+            <td>@satis.Personel.PersonelAd @satis.Personel.PersonelSoyad</td>
+            <td>@satis.Tarih</td>
+            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Satis/satisGetir/@satis.SatisHareketID" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/Satis/satisDetay/@satis.SatisHareketID" class="btn btn-info">Detaylar</a></td>
+        </tr>
+    }
 </table>
 <a href="/Satis/yeniSatis" class="btn btn-success" style="margin-left:20px">Yeni Satış</a>
+<!-- Data table için script dosyaları-->
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#satisTablosu').dataTable({});
+</script>
 
