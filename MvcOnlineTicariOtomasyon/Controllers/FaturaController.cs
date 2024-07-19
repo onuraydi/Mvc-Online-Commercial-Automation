@@ -51,7 +51,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult faturaDetay(int ID)
         {
-            var faturalar = context.FaturaKalems.Where(x => x.FaturaKalemID == ID).ToList();
+            var faturalar = context.FaturaKalems.Where(x => x.FaturaID == ID).ToList();
             return View(faturalar);
         }
         [HttpGet]
