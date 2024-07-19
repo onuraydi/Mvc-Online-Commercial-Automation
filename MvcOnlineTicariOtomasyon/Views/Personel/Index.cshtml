@@ -5,29 +5,39 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<table class="table table-bordered"style="margin-left:20px;margin-top:20px">
-    <tr>
-        <th>ID</th>
-        <th>Ad</th>
-        <th>Soyad</th>
-        <th>Departman</th>
-        <th>Resim</th>
-        <th>Sil</th>
-        <th>Güncelle</th>
-        <th>Satışlar</th>
-    </tr>
-    @foreach(var personel in Model)
-            {
-                <tr>
-                    <td>@personel.PersonelID</td>
-                    <td>@personel.PersonelAd</td>
-                    <td>@personel.PersonelSoyad</td>
-                    <td>@personel.Departman.DepartmanAd</td>
-                    <td>@personel.PersonelGorsel</td>
-                    <td><a href="/Personel/personelSil/@personel.PersonelID"class="btn btn-danger">Sil</a></td>
-                    <td><a href="/Personel/personelGetir/@personel.PersonelID"class="btn btn-primary">Güncelle</a></td>
-                    <td><a href="/Departman/departmanIcınPersonelSatis/@personel.PersonelID"class="btn btn-info">Satışlar</a></td>
-                </tr>
-            }
-</table>
-<td><a href="/Personel/personelEkle/" class="btn btn-success"style="margin-left:20px">Personel Ekle</a></td>
+<div class="table-responsive">
+    <table class="table table-bordered " style="margin-left:20px;margin-top:20px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+        <tr>
+            <th>ID</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Departman</th>
+            <th>Telefon</th>
+            <th>Mail</th>
+            <th>Adres</th>
+            <th>Hakkında</th>
+            <th>Resim</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Satışlar</th>
+        </tr>
+        @foreach (var personel in Model)
+        {
+            <tr>
+                <td>@personel.PersonelID</td>
+                <td>@personel.PersonelAd</td>
+                <td>@personel.PersonelSoyad</td>
+                <td>@personel.Departman.DepartmanAd</td>
+                <td>@personel.Telefon</td>
+                <td>@personel.mail</td>
+                <td>@personel.Adres</td>
+                <td>@personel.Hakkinda</td>
+                <td>@personel.PersonelGorsel</td>
+                <td><a href="/Personel/personelSil/@personel.PersonelID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Personel/personelGetir/@personel.PersonelID" class="btn btn-primary">Güncelle</a></td>
+                <td><a href="/Departman/departmanIcınPersonelSatis/@personel.PersonelID" class="btn btn-info">Satışlar</a></td>
+            </tr>
+        }
+    </table>
+</div>
+<td><a href="/Personel/personelEkle/" class="btn btn-success" style="margin-left:20px">Personel Ekle</a></td>

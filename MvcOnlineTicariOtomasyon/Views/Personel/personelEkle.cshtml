@@ -15,7 +15,19 @@
     @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
     <br />
     @Html.Label("Departman:")
-    @Html.DropDownListFor(x => x.DepartmanId,(List<SelectListItem>) ViewBag.departman, new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.DepartmanId, (List<SelectListItem>)ViewBag.departman, new { @class = "form-control" })
+    <br />
+    @Html.Label("Telefon:")
+    @Html.DropDownListFor(x => x.Telefon, (List<SelectListItem>)ViewBag.departman, new { @class = "form-control" })
+    <br />
+    @Html.Label("Mail:")
+    @Html.DropDownListFor(x => x.mail, (List<SelectListItem>)ViewBag.departman, new { @class = "form-control" })
+    <br />
+    @Html.Label("Adres:")
+    @Html.DropDownListFor(x => x.Adres, (List<SelectListItem>)ViewBag.departman, new { @class = "form-control" })
+    <br />
+    @Html.Label("Hakkında:")
+    @Html.DropDownListFor(x => x.Hakkinda, (List<SelectListItem>)ViewBag.departman, new { @class = "form-control" })
     <br />
     @Html.Label("Resim:")
     @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
