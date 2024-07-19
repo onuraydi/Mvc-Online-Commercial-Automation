@@ -147,14 +147,17 @@
     <Compile Include="Models\Siniflar\Cari.cs" />
     <Compile Include="Models\Siniflar\Context.cs" />
     <Compile Include="Models\Siniflar\Departman.cs" />
+    <Compile Include="Models\Siniflar\DepartmanPersonelSayi.cs" />
     <Compile Include="Models\Siniflar\Detay.cs" />
     <Compile Include="Models\Siniflar\Detay2.cs" />
     <Compile Include="Models\Siniflar\FaturaKalem.cs" />
     <Compile Include="Models\Siniflar\Faturalar.cs" />
     <Compile Include="Models\Siniflar\Gider.cs" />
     <Compile Include="Models\Siniflar\Kategori.cs" />
+    <Compile Include="Models\Siniflar\MarkaSayi.cs" />
     <Compile Include="Models\Siniflar\Personel.cs" />
     <Compile Include="Models\Siniflar\SatisHareket.cs" />
+    <Compile Include="Models\Siniflar\SinifGrup.cs" />
     <Compile Include="Models\Siniflar\Urun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2851,6 +2854,11 @@
     <Content Include="thumber\scss\_site-navbar.scss" />
     <Content Include="Views\Galeri\Index.cshtml" />
     <Content Include="Views\UrunDetay\Index.cshtml" />
+    <Content Include="Views\Istatistik\basitTablolar.cshtml" />
+    <Content Include="Views\Istatistik\departmanPersonelSayi.cshtml" />
+    <Content Include="Views\Istatistik\cariListesi.cshtml" />
+    <Content Include="Views\Istatistik\urunListesi.cshtml" />
+    <Content Include="Views\Istatistik\markaSayisi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

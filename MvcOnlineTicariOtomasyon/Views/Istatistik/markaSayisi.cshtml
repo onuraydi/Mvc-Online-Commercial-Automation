@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MvcOnlineTicariOtomasyon.Models.Siniflar.MarkaSayi>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Marka Sayıları</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Marka</th>
+                    <th>Durum</th>
+                    <th style="width: 40px">Sayı</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int sayi = 0; }
+                @foreach (var marka in Model)
+                {
+                    sayi = sayi + 1;
+                    <tr>
+                        <td>@sayi.</td>
+                        <td>@marka.MarkaAd</td>
+                        <td>
+                            <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-danger" style="width: @marka.MarkaninSayisi%"></div>
+                            </div>
+                        </td>
+                        <td><span class="badge bg-danger">@marka.MarkaninSayisi</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

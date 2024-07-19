@@ -75,5 +75,50 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             }
             return View();
         }
+
+        public ActionResult basitTablolar()
+        {
+            var sehirSayi = (from x in context.Caris
+                             group x by x.CariSehir into sehir
+                             select new SinifGrup
+                             {
+                                 Sehir = sehir.Key,
+                                 Sayi = sehir.Count()
+                             });
+            return View(sehirSayi.ToList());
+        }
+        //partial view
+        public PartialViewResult departmanPersonelSayi()
+        {
+            var departmanPersonelSayisi = (from x in context.Personels group x by x.Departman.DepartmanAd into departman select new DepartmanPersonelSayi
+            {
+                DepartmanID = departman.Key,
+                PersonelSayi = departman.Count()
+            });
+            return PartialView(departmanPersonelSayisi.ToList());
+        }
+
+        public PartialViewResult cariListesi()
+        {
+            var cariListesi = context.Caris.ToList();
+            return PartialView(cariListesi);
+        }
+
+        public PartialViewResult urunListesi()
+        {
+            var urunListesi = context.Uruns.ToList();
+            return PartialView(urunListesi);
+        }
+        public PartialViewResult markaSayisi()
+        {
+            var markaSayisi = (from x in context.Uruns
+                               group x by x.Marka into marka
+                               select new MarkaSayi
+                               {
+                                   MarkaAd = marka.Key,
+                                   MarkaninSayisi = marka.Count()
+                               });
+            return PartialView(markaSayisi.ToList());
+        }
     }
 }

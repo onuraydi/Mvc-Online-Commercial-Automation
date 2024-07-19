@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\ONUR\\Desktop\\MvcOnlineTicariOtomasyon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CDE11D95-24CB-4111-9A5B-8E3030AD43F8}|MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon.csproj|c:\\users\\onur\\desktop\\mvconlineticariotomasyon\\mvconlineticariotomasyon\\views\\urundetay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CDE11D95-24CB-4111-9A5B-8E3030AD43F8}|MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon.csproj|solutionrelative:mvconlineticariotomasyon\\views\\urundetay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDE11D95-24CB-4111-9A5B-8E3030AD43F8}|MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon.csproj|c:\\users\\onur\\desktop\\mvconlineticariotomasyon\\mvconlineticariotomasyon\\controllers\\urundetaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDE11D95-24CB-4111-9A5B-8E3030AD43F8}|MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon.csproj|solutionrelative:mvconlineticariotomasyon\\controllers\\urundetaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDE11D95-24CB-4111-9A5B-8E3030AD43F8}|MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon.csproj|c:\\users\\onur\\desktop\\mvconlineticariotomasyon\\mvconlineticariotomasyon\\views\\istatistik\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CDE11D95-24CB-4111-9A5B-8E3030AD43F8}|MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon.csproj|solutionrelative:mvconlineticariotomasyon\\views\\istatistik\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ONUR\\Desktop\\MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon\\Views\\Istatistik\\Index.cshtml",
+              "RelativeDocumentMoniker": "MvcOnlineTicariOtomasyon\\Views\\Istatistik\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ONUR\\Desktop\\MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon\\Views\\Istatistik\\Index.cshtml",
+              "RelativeToolTip": "MvcOnlineTicariOtomasyon\\Views\\Istatistik\\Index.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAA8AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-19T09:22:03.57Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -27,32 +36,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ONUR\\Desktop\\MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon\\Views\\UrunDetay\\Index.cshtml",
-              "RelativeDocumentMoniker": "MvcOnlineTicariOtomasyon\\Views\\UrunDetay\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ONUR\\Desktop\\MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon\\Views\\UrunDetay\\Index.cshtml",
-              "RelativeToolTip": "MvcOnlineTicariOtomasyon\\Views\\UrunDetay\\Index.cshtml",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEgAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-18T15:00:11.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UrunDetayController.cs",
-              "DocumentMoniker": "C:\\Users\\ONUR\\Desktop\\MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon\\Controllers\\UrunDetayController.cs",
-              "RelativeDocumentMoniker": "MvcOnlineTicariOtomasyon\\Controllers\\UrunDetayController.cs",
-              "ToolTip": "C:\\Users\\ONUR\\Desktop\\MvcOnlineTicariOtomasyon\\MvcOnlineTicariOtomasyon\\Controllers\\UrunDetayController.cs",
-              "RelativeToolTip": "MvcOnlineTicariOtomasyon\\Controllers\\UrunDetayController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T14:09:02.06Z",
-              "EditorCaption": ""
             }
           ]
         }
