@@ -85,4 +85,3 @@ C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\Page
 C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\PagedList.Mvc.dll
 C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\PagedList.xml
 C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\PagedList.Mvc.xml
-C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\QRCoder.dll
