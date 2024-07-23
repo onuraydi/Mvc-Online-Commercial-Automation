@@ -81,3 +81,8 @@ C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\Enti
 C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\EntityFramework.SqlServer.dll
 C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\EntityFramework.xml
 C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\EntityFramework.SqlServer.xml
+C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\PagedList.dll
+C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\PagedList.Mvc.dll
+C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\PagedList.xml
+C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\PagedList.Mvc.xml
+C:\Users\ONUR\Desktop\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\bin\QRCoder.dll

@@ -11,10 +11,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         // GET: Urun
         Context context = new Context();
-        public ActionResult Index()
+        public ActionResult Index(string parametre)
         {
-            var urunler = context.Uruns.Where(x => x.Durum==true).ToList();
-            return View(urunler);  
+            var urunler = from x in context.Uruns select x;
+            if(!string.IsNullOrEmpty(parametre))
+            {
+                urunler = urunler.Where(y => y.UrunAd.Contains(parametre));  // büyük küçük harf duyarlılığı ??
+            }
+            return View(urunler.ToList());  
         }
         [HttpGet]
         public ActionResult yeniUrun()
@@ -80,6 +84,40 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var degerler = context.Uruns.ToList();
             return View(degerler);  
+        }
+        [HttpGet]
+        public ActionResult satisYap(int ID)
+        {
+            List<SelectListItem> personel = (from z in context.Personels.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = z.PersonelAd + " " + z.PersonelSoyad,
+                                                 Value = z.PersonelID.ToString()
+                                             }).ToList();
+            ViewBag.personel = personel;
+
+            List<SelectListItem> cari = (from y in context.Caris.ToList()
+                                         select new SelectListItem
+                                         {
+                                             Text = y.CariAd + " " + y.CariSoyad,
+                                             Value = y.CariID.ToString()
+                                         }).ToList();
+            ViewBag.cari = cari;
+
+
+            var urun = context.Uruns.Find(ID);
+            ViewBag.urun = urun.UrunID;
+            ViewBag.fiyat = urun.SatisFiyat;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult satisYap(SatisHareket satis)
+        {
+            satis.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            context.SatisHarekets.Add(satis);
+            context.SaveChanges();
+            return RedirectToAction("Index","Satis");
+
         }
     }
 }

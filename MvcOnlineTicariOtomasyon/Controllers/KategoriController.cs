@@ -1,4 +1,5 @@
 ﻿using MvcOnlineTicariOtomasyon.Models.Siniflar;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         // GET: Kategori
         Context context = new Context();  // Database tablolarını context içersinde tutarız.
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1)
         {
-            var kategoriler = context.Kategoris.ToList();
+            var kategoriler = context.Kategoris.ToList().ToPagedList(sayfa,10);
             return View(kategoriler);
         }
         [HttpGet]                     
@@ -48,5 +49,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
     }
 }

@@ -6,8 +6,10 @@
 <br />
 <h2 style="margin-left:20px">Personel Ekleme</h2>
 <br />
+@using (Html.BeginForm("personelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data", style = "margin-left:20px"}))
+{
 
-<form class="form-grop" method="post" style="margin-left:20px">
+<form class="form-grop" method="post">
     @Html.Label("Ad:")
     @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
     <br />
@@ -18,22 +20,23 @@
     @Html.DropDownListFor(x => x.DepartmanId, (List<SelectListItem>)ViewBag.departman, new { @class = "form-control" })
     <br />
     @Html.Label("Telefon:")
-    @Html.DropDownListFor(x => x.Telefon, (List<SelectListItem>)ViewBag.departman, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
     <br />
     @Html.Label("Mail:")
-    @Html.DropDownListFor(x => x.mail, (List<SelectListItem>)ViewBag.departman, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.mail, new { @class = "form-control" })
     <br />
     @Html.Label("Adres:")
-    @Html.DropDownListFor(x => x.Adres, (List<SelectListItem>)ViewBag.departman, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Adres, new { @class = "form-control" })
     <br />
     @Html.Label("Hakkında:")
-    @Html.DropDownListFor(x => x.Hakkinda, (List<SelectListItem>)ViewBag.departman, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Hakkinda, new { @class = "form-control" })
     <br />
     @Html.Label("Resim:")
-    @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })*@
+    <input type="file" name="PersonelGorsel" />
     <br />
     <button class="btn btn-success">Ekle</button>
 </form>
-
+}
 
 

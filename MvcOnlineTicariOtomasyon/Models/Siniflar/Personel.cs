@@ -30,6 +30,9 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [StringLength(70)]
         public string mail { get; set; }
         [Column(TypeName = "varchar")]
+        [StringLength(30)]
+        public string PersonelSifre { get; set; }
+        [Column(TypeName = "varchar")]
         [StringLength(500)]
         public string Hakkinda { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }

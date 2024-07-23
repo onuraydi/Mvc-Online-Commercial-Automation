@@ -1,0 +1,43 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "satisYap";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2 style="margin-left:20px">Yeni Satış</h2>
+<br />
+
+<form class="form-group" method="post" style="margin-left:20px">
+    @Html.Label("Ürün:")
+    <input type="text" name="UrunID" value="@ViewBag.urun" class="form-control" readonly />
+    <br />
+    @Html.Label("Fiyat:")
+    <input type="text" name="Fiyat" value="@ViewBag.fiyat" class="form-control" id="Fiyat" onkeyup="carpma()" />
+    <br />
+    @Html.Label("Adet:")
+    <input type="number" name="Adet" class="form-control" max="20" min="1" id="Adet" onchange="carpma()" />
+    <br />
+    @Html.Label("Tutar:")
+    <input type="text" name="ToplamTutar" value="0" class="form-control" id="ToplamTutar" readonly />
+    <br />
+    @Html.Label("Cari:")
+    @Html.DropDownListFor(x => x.CariID, (List<SelectListItem>)ViewBag.Cari, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel:")
+    @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.personel, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Satış Yap</button>
+</form>
+<br />
+<script>
+    function carpma() {
+        var fiyat = document.getElementById('Fiyat').value; // 'value' küçük harfle
+        var adet = document.getElementById('Adet').value; // 'value' küçük harfle
+        adet = parseInt(adet);
+        fiyat = parseFloat(fiyat);
+        var toplamTutar = adet * fiyat;
+        if (!isNaN(toplamTutar)) {
+            document.getElementById('ToplamTutar').value = toplamTutar; // 'value' küçük harfle
+        }
+    }
+</script>

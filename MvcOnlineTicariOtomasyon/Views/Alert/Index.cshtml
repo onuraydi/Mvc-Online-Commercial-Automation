@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.7.0.js"></script>
+
+<h2 style="margin-left:20px">Alertler</h2>
+<br />
+<br />
+
+<button class="btn btn-primary" id="btn1" style="margin-left:20px">Buton</button>
+<br />
+<br />
+<button class="btn btn-primary" id="btn2" style="margin-left:20px">Buton2</button>
+<br />
+<br />
+<button class="btn btn-primary" id="btn3" style="margin-left:20px">Buton3</button>
+<br />
+<br />
+<button class="btn btn-primary" id="btn4" style="margin-left:20px">Buton4</button>
+<br />
+<br />
+<button class="btn btn-primary" id="btn5" style="margin-left:20px">Buton5 </button>
+<br />
+<br />
+<button class="btn btn-primary" id="btn6" style="margin-left:20px">Buton6 </button>
+<br />
+<br />
+
+<script>
+    $("#btn1").click(function () {
+        swal("Bu bir sweet alert'tir.")
+    });
+</script>
+
+
+<script>
+    $("#btn2").click(function () {
+        swal("Burası alert'in başlığıdır!", "Burası metindir.");
+    });
+</script>
+
+
+<script>
+    $("#btn3").click(function () {
+        swal("Animasyonlu Alert Başığı!", "Metin", "success");
+    });
+</script>
+
+<!-- farklı kullanım-->
+<script>
+    $("#btn3").click(function () {
+        swal({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success",
+        });
+    });
+</script>
+
+
+<script>
+    $("#btn4").click(function () {
+        swal("Good job!", "You clicked the button!", "success", {
+            button: "Buton yazısını değiştirebiliriz!",
+        });
+    });
+</script>
+
+<script>
+    $("#btn5").click(function () {
+        swal("Click on either the button or outside the modal.")
+            .then((value) => {
+                swal(`The returned value is: ${value}`);
+            });
+    });
+</script>
+
+<script>
+    $("#btn6").click(function () {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+    });
+</script>
