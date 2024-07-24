@@ -23,10 +23,10 @@
             Sil
         </th>
     </tr>
-        @foreach (var kategori in Model)
-        {
-            <!-- satır anlamına geliyor-->
-           <tr>
+    @foreach (var kategori in Model)
+    {
+        <!-- satır anlamına geliyor-->
+        <tr>
             <td>
                 @kategori.KategoriID
             </td>
@@ -34,13 +34,22 @@
                 @kategori.KategoriAd
             </td>
             <td><a href="/Kategori/kategorigetir/@kategori.KategoriID" class="btn btn-primary">Güncelle</a></td>
-               <td><a href="/Kategori/kategoriSil/@kategori.KategoriID" class="btn btn-danger">Sil</a></td>
-         </tr>
+            <td><a href="/Kategori/kategoriSil/@kategori.KategoriID" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+
+</table>
+<div style="margin-left:20px">
+
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa })
+    , new PagedListRenderOptions
+    {
+        LiElementClasses = new List<string>
+        {
+            "page-link"
         }
-
-    </table>
-
-@Html.PagedListPager((IPagedList)Model,sayfa => Url.Action("Index",new {sayfa }))  <!-- butonların cssleri bozuk-->
-
+    })
+</div>
 <a href="/Kategori/kategoriEkle" class="btn btn-success" style="margin-left:20px">Kategori Ekle</a>
- 
+
+

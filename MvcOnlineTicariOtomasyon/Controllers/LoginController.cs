@@ -8,6 +8,7 @@ using System.Web.Security;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [AllowAnonymous]  // global asax'taki authorize işlemini burası hariç yapmak için kullandık
     public class LoginController : Controller
     {
         // GET: Login

@@ -50,6 +50,24 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult CascadindDeneme()
+        {
+            Cascading cascading = new Cascading();
+            cascading.Kategoriler = new SelectList(context.Kategoris, "KategoriID", "KategoriAd");
+            cascading.Urunler = new SelectList(context.Uruns, "UrunID", "UrunAd");
+            return View(cascading);
+        }
 
+        public JsonResult kategoriyeGorUrun(int parametre)
+        {
+            var urunler = (from x in context.Uruns join y in context.Kategoris on x.Kategori.KategoriID equals y.KategoriID 
+                           where x.Kategori.KategoriID == parametre
+                           select new
+                           {
+                               Text = x.UrunAd,
+                               Value = x.UrunID.ToString(),
+                           }).ToList();
+            return Json(urunler, JsonRequestBehavior.AllowGet);
+        }
     }
 }

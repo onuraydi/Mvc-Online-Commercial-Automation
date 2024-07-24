@@ -54,8 +54,8 @@
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -141,6 +141,7 @@
     <Compile Include="Controllers\CariController.cs" />
     <Compile Include="Controllers\CariPanelController.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\GaleriController.cs" />
     <Compile Include="Controllers\GrafikController.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Siniflar\Admin.cs" />
     <Compile Include="Models\Siniflar\Cari.cs" />
+    <Compile Include="Models\Siniflar\Cascading.cs" />
     <Compile Include="Models\Siniflar\Class1.cs" />
     <Compile Include="Models\Siniflar\Context.cs" />
     <Compile Include="Models\Siniflar\Departman.cs" />
@@ -2193,6 +2195,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\anonim.png" />
     <Content Include="Image\Ekran görüntüsü 2024-04-23 172424.png.png" />
     <Content Include="Image\m42mapped_croman_full.jpg.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -2954,6 +2957,12 @@
     <Content Include="Views\CariPanel\gidenMesajlar.cshtml" />
     <Content Include="Views\CariPanel\mesajDetay.cshtml" />
     <Content Include="Views\CariPanel\yeniMesaj.cshtml" />
+    <Content Include="Views\CariPanel\kargoTakip.cshtml" />
+    <Content Include="Views\CariPanel\kargoTakipDetay.cshtml" />
+    <Content Include="Views\CariPanel\cariAyarlari.cshtml" />
+    <Content Include="Views\CariPanel\duyurular.cshtml" />
+    <Content Include="Views\Error\PageError.cshtml" />
+    <Content Include="Views\Kategori\CascadindDeneme.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
