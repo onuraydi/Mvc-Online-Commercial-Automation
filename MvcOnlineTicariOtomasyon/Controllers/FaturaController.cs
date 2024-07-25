@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -66,6 +67,40 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             context.FaturaKalems.Add(faturaKalem);
             context.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult dinamikFatura()
+        {
+            dinamikFatura dinamikFatura = new dinamikFatura();
+            dinamikFatura.fatura = context.Faturalars.ToList();
+            dinamikFatura.faturaKalem = context.FaturaKalems.ToList();
+            return View(dinamikFatura);
+        }
+
+        public ActionResult faturaKaydet(string FaturaSeriNo,string FaturaSiraNo,DateTime FaturaTarih,string VergiDairesi, string Saat, string TeslimEden, string TeslimAlan,string Toplam, FaturaKalem[] kalemler)
+        {
+            Faturalar faturalar = new Faturalar();
+            faturalar.FaturaSeriNo = FaturaSeriNo;
+            faturalar.FaturaSıraNo = FaturaSiraNo;
+            faturalar.FaturaTarih = FaturaTarih;
+            faturalar.VergiDairesi = VergiDairesi;
+            faturalar.Saat = Saat;  
+            faturalar.TeslimEden = TeslimEden;
+            faturalar.TeslimAlan = TeslimAlan;
+            faturalar.Toplam = Convert.ToDecimal(Toplam);
+            context.Faturalars.Add(faturalar);
+            foreach (var item in kalemler)
+            {
+                FaturaKalem faturaKalem = new FaturaKalem();
+                faturaKalem.Aciklama = item.Aciklama;
+                faturaKalem.Miktar = item.Miktar;
+                faturaKalem.BirimFiyat = item.BirimFiyat;
+                faturaKalem.Tutar = item.Tutar;
+                faturaKalem.FaturaID = item.FaturaKalemID;
+                context.FaturaKalems.Add(faturaKalem);
+            }
+            context.SaveChanges();
+            return Json("İşlem başarılı", JsonRequestBehavior.AllowGet);
         }
     }
 }

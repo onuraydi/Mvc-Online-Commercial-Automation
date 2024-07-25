@@ -169,6 +169,7 @@
     <Compile Include="Models\Siniflar\DepartmanPersonelSayi.cs" />
     <Compile Include="Models\Siniflar\Detay.cs" />
     <Compile Include="Models\Siniflar\Detay2.cs" />
+    <Compile Include="Models\Siniflar\dinamikFatura.cs" />
     <Compile Include="Models\Siniflar\FaturaKalem.cs" />
     <Compile Include="Models\Siniflar\Faturalar.cs" />
     <Compile Include="Models\Siniflar\Gider.cs" />
@@ -2963,6 +2964,7 @@
     <Content Include="Views\CariPanel\duyurular.cshtml" />
     <Content Include="Views\Error\PageError.cshtml" />
     <Content Include="Views\Kategori\CascadindDeneme.cshtml" />
+    <Content Include="Views\Fatura\dinamikFatura.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
